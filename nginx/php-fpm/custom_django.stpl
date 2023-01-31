@@ -34,6 +34,9 @@ server {
   location /static/ {
     root %home%/%user%/web/%domain%/public_html;
   }
+  location /media/ {
+    root %home%/%user%/web/%domain%/public_html;
+  }
   location /error/ {
     alias %home%/%user%/web/%domain%/document_errors/;
   }
