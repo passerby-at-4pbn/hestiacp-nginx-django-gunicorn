@@ -10,8 +10,7 @@ Django custom templates for Hestia Control Panel with nginx+php-fpm. Per-domain 
 #### user
 create folder structure for an application and install required pip packages into virtualenv
 
-
-      $ cd ~/web/myapp.example.com/public_html
+      $ cd ~/web/app.example.com/public_html
       $ mkdir app
       $ git clone ... app
       $ virtualenv .env
@@ -22,3 +21,10 @@ create folder structure for an application and install required pip packages int
 
 #### root
 copy template files into /usr/local/hestia/data/templates/web/nginx/php-fpm/
+
+
+#### PS
+manual start reminder
+
+      $ cd ~/web/app.example.com/public_html
+      $ gunicorn --bind unix:app/gunicorn.sock app.wsgi:application
