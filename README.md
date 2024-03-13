@@ -15,7 +15,7 @@ create folder structure for an application and install required pip packages int
       $ git clone ... app
       $ virtualenv .env
       $ source .env/bin/activate
-      (.env)...$ pip install django gunicorn mysqlclient
+      (.env)...$ pip install django gunicorn mysqlclient sudo
       (.env)...$ deactivate
       $ chown -R example_user:example_user .env/
 
