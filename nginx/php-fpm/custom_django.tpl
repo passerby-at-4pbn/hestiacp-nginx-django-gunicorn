@@ -28,9 +28,11 @@ server {
   }
   location /static/ {
     root %home%/%user%/web/%domain%/public_html;
+    expires max;
   }
   location /media/ {
     root %home%/%user%/web/%domain%/public_html;
+    expires max;
   }
   location /error/ {
     alias %home%/%user%/web/%domain%/document_errors/;
@@ -42,10 +44,6 @@ server {
   location /vstats/ {
     alias   %home%/%user%/web/%domain%/stats/;
     include %home%/%user%/web/%domain%/stats/auth.conf*;
-  }
-  location ~* ^.+\.(jpeg|jpg|png|webp|gif|bmp|ico|svg|css|js)$ {
-    expires       max;
-    log_not_found off;
   }
 
   include %home%/%user%/conf/web/%domain%/nginx.conf_*;
